@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1D1B8186-EB1C-4E92-9C2E-F8F8BCB85ACC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Meas3D</RootNamespace>
+    <AssemblyName>Meas3D</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BSLib, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Packages\JLib\BSLib.dll</HintPath>
+    </Reference>
+    <Reference Include="halcondotnet, Version=17.12.0.0, Culture=neutral, PublicKeyToken=4973bed59ddbf2b8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Packages\Halcon\halcondotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilizer, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Packages\JLib\Serilizer.dll</HintPath>
+    </Reference>
+    <Reference Include="SunnyUI">
+      <HintPath>..\..\Packages\UI\SunnyUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CalibControl\Calib3DManager.cs" />
+    <Compile Include="CalibControl\Calib3DPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CalibControl\Calib3DPanel.Designer.cs">
+      <DependentUpon>Calib3DPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CalibControl\Calib3DPointsModel.cs" />
+    <Compile Include="CalibControl\Step3DModel.cs" />
+    <Compile Include="CalibControl\Step3DView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CalibControl\Step3DView.Designer.cs">
+      <DependentUpon>Step3DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CalibControl\MinimizedView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CalibControl\MinimizedView.Designer.cs">
+      <DependentUpon>MinimizedView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FixPosControl\FixPos3DManager.cs" />
+    <Compile Include="FixPosControl\FixPosModel\CircleLineFixPos3DModel.cs" />
+    <Compile Include="FixPosControl\FixPosModel\CirclesFixPos3DModel.cs" />
+    <Compile Include="FixPosControl\FixPosModel\EFixPos3DType.cs" />
+    <Compile Include="FixPosControl\FixPosModel\FixPos3DBaseModel.cs" />
+    <Compile Include="FixPosControl\FixPosModel\FixPos3DFactory.cs" />
+    <Compile Include="FixPosControl\FixPosModel\LinesFixPos3DModel.cs" />
+    <Compile Include="FixPosControl\FixPosModel\ModelMatchFixPos3DModel.cs" />
+    <Compile Include="FixPosControl\FixPos3DPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FixPosControl\FixPos3DPanel.Designer.cs">
+      <DependentUpon>FixPos3DPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FixPosControl\FixPosView\CircleLineFixPos3DView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FixPosControl\FixPosView\CircleLineFixPos3DView.Designer.cs">
+      <DependentUpon>CircleLineFixPos3DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FixPosControl\FixPosView\CirclesFixPos3DView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FixPosControl\FixPosView\CirclesFixPos3DView.Designer.cs">
+      <DependentUpon>CirclesFixPos3DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FixPosControl\FixPosView\LinesFixPos3DView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FixPosControl\FixPosView\LinesFixPos3DView.Designer.cs">
+      <DependentUpon>LinesFixPos3DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FixPosControl\FixPosView\ModelMatchFixPos3DView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FixPosControl\FixPosView\ModelMatchFixPos3DView.Designer.cs">
+      <DependentUpon>ModelMatchFixPos3DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Meas3DManager.cs" />
+    <Compile Include="Meas3DPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Meas3DPage.Designer.cs">
+      <DependentUpon>Meas3DPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolControl\ETool3DType.cs" />
+    <Compile Include="ToolControl\Tools3DManager.cs" />
+    <Compile Include="ToolControl\ToolsModel\CirclesDistTool3DModel.cs" />
+    <Compile Include="ToolControl\ToolsModel\ClueTool3DModel.cs" />
+    <Compile Include="ToolControl\ToolsModel\CTLDistTool3DModel.cs" />
+    <Compile Include="ToolControl\ToolsModel\FitCircleTool3DModel.cs" />
+    <Compile Include="ToolControl\ToolsModel\FitLineToo3DlModel.cs" />
+    <Compile Include="ToolControl\ToolsModel\FitPlaneTool3DModel.cs" />
+    <Compile Include="ToolControl\ToolsModel\LinesDistTool3DModel.cs" />
+    <Compile Include="ToolControl\ToolsModel\PlanesIntersectionTool3DModel.cs" />
+    <Compile Include="ToolControl\ToolsModel\PlaneToPlaneAngleTool3DModel.cs" />
+    <Compile Include="ToolControl\ToolsModel\PointsDistTool3DModel.cs" />
+    <Compile Include="ToolControl\ToolsModel\PointTool3DModel.cs" />
+    <Compile Include="ToolControl\ToolsModel\RegionHeightTool3DModel.cs" />
+    <Compile Include="ToolControl\ToolsModel\Tool3DBaseModel.cs" />
+    <Compile Include="ToolControl\ToolsModel\Tools3DFactory.cs" />
+    <Compile Include="ToolControl\ToolsModel\VertexLocTool3DModel.cs" />
+    <Compile Include="ToolControl\ToolsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolControl\ToolsPanel.Designer.cs">
+      <DependentUpon>ToolsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\CirclesDistTool3DView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\CirclesDistTool3DView.Designer.cs">
+      <DependentUpon>CirclesDistTool3DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\ClueTool3DView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\ClueTool3DView.Designer.cs">
+      <DependentUpon>ClueTool3DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\CTLDistTool3DView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\CTLDistTool3DView.Designer.cs">
+      <DependentUpon>CTLDistTool3DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\FitCircleTool3DView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\FitCircleTool3DView.Designer.cs">
+      <DependentUpon>FitCircleTool3DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\FitLineTool3DView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\FitLineTool3DView.Designer.cs">
+      <DependentUpon>FitLineTool3DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\FitPlaneTool3DView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\FitPlaneTool3DView.Designer.cs">
+      <DependentUpon>FitPlaneTool3DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\LinesDistTool3DView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\LinesDistTool3DView.Designer.cs">
+      <DependentUpon>LinesDistTool3DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\MinimizedView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\MinimizedView.Designer.cs">
+      <DependentUpon>MinimizedView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\PlanesIntersectionTool3DView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\PlanesIntersectionTool3DView.Designer.cs">
+      <DependentUpon>PlanesIntersectionTool3DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\PlaneToPlaneAngleTool3DView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\PlaneToPlaneAngleTool3DView.Designer.cs">
+      <DependentUpon>PlaneToPlaneAngleTool3DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\PointsDistTool3DView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\PointsDistTool3DView.Designer.cs">
+      <DependentUpon>PointsDistTool3DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\RegionHeightTool3DView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\RegionHeightTool3DView.Designer.cs">
+      <DependentUpon>RegionHeightTool3DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\VertexLocTool3DView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\VertexLocTool3DView.Designer.cs">
+      <DependentUpon>VertexLocTool3DView.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CalibControl\Calib3DPanel.resx">
+      <DependentUpon>Calib3DPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CalibControl\Step3DView.resx">
+      <DependentUpon>Step3DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CalibControl\MinimizedView.resx">
+      <DependentUpon>MinimizedView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FixPosControl\FixPos3DPanel.resx">
+      <DependentUpon>FixPos3DPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FixPosControl\FixPosView\CircleLineFixPos3DView.resx">
+      <DependentUpon>CircleLineFixPos3DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FixPosControl\FixPosView\CirclesFixPos3DView.resx">
+      <DependentUpon>CirclesFixPos3DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FixPosControl\FixPosView\LinesFixPos3DView.resx">
+      <DependentUpon>LinesFixPos3DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FixPosControl\FixPosView\ModelMatchFixPos3DView.resx">
+      <DependentUpon>ModelMatchFixPos3DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Meas3DPage.resx">
+      <DependentUpon>Meas3DPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolControl\ToolsPanel.resx">
+      <DependentUpon>ToolsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolControl\ToolsView\CirclesDistTool3DView.resx">
+      <DependentUpon>CirclesDistTool3DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolControl\ToolsView\ClueTool3DView.resx">
+      <DependentUpon>ClueTool3DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolControl\ToolsView\CTLDistTool3DView.resx">
+      <DependentUpon>CTLDistTool3DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolControl\ToolsView\FitCircleTool3DView.resx">
+      <DependentUpon>FitCircleTool3DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolControl\ToolsView\FitLineTool3DView.resx">
+      <DependentUpon>FitLineTool3DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolControl\ToolsView\FitPlaneTool3DView.resx">
+      <DependentUpon>FitPlaneTool3DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolControl\ToolsView\LinesDistTool3DView.resx">
+      <DependentUpon>LinesDistTool3DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolControl\ToolsView\MinimizedView.resx">
+      <DependentUpon>MinimizedView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolControl\ToolsView\PlanesIntersectionTool3DView.resx">
+      <DependentUpon>PlanesIntersectionTool3DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolControl\ToolsView\PlaneToPlaneAngleTool3DView.resx">
+      <DependentUpon>PlaneToPlaneAngleTool3DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolControl\ToolsView\PointsDistTool3DView.resx">
+      <DependentUpon>PointsDistTool3DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolControl\ToolsView\RegionHeightTool3DView.resx">
+      <DependentUpon>RegionHeightTool3DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolControl\ToolsView\VertexLocTool3DView.resx">
+      <DependentUpon>VertexLocTool3DView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AlgoLib\AlgoLib.csproj">
+      <Project>{9188cd1c-87a1-4858-8282-843dfb9b1b33}</Project>
+      <Name>AlgoLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MeasResult\MeasResult.csproj">
+      <Project>{7f332724-6b38-4528-9f4f-5d43afd3829d}</Project>
+      <Name>MeasResult</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vision2D\Vision2D.csproj">
+      <Project>{edf88c71-e677-42d4-b77b-e3b5bb6ebc9c}</Project>
+      <Name>Vision2D</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vision3D\Vision3D.csproj">
+      <Project>{e09a050c-3e5e-4e30-a250-c9cedabb5f60}</Project>
+      <Name>Vision3D</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

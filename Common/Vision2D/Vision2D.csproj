@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EDF88C71-E677-42D4-B77B-E3B5BB6EBC9C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vision2D</RootNamespace>
+    <AssemblyName>Vision2D</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="halcondotnet">
+      <HintPath>C:\Program Files\MVTec\HALCON-17.12-Progress\bin\dotnet35\halcondotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="JLogging">
+      <HintPath>..\..\Packages\JLogging\JLogging.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EOperationMode.cs" />
+    <Compile Include="JMessage.cs" />
+    <Compile Include="JWindow2D.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="JWindow2D.Designer.cs">
+      <DependentUpon>JWindow2D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MsgManager.cs" />
+    <Compile Include="Shape\Shape2DBase.cs" />
+    <Compile Include="Shape\Shape2DCircle.cs" />
+    <Compile Include="Shape\Shape2DCross.cs" />
+    <Compile Include="Shape\Shape2DHelper.cs" />
+    <Compile Include="Shape\Shape2DLine.cs" />
+    <Compile Include="Shape\Shape2DManager.cs" />
+    <Compile Include="Shape\Shape2DPoint.cs" />
+    <Compile Include="Shape\Shape2DRect.cs" />
+    <Compile Include="Shape\EShape2DType.cs" />
+    <Compile Include="Win2DManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="JWindow2D.resx">
+      <DependentUpon>JWindow2D.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

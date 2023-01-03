@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ArrayOfAxisInfo>
+	<AxisInfo>
+	  <Name>X</Name>
+	  <BoardID>20220001</BoardID>
+	  <AxisIndex>0</AxisIndex>
+    <IsBelt>false</IsBelt>
+	</AxisInfo>
+	<AxisInfo>
+	  <Name>Y</Name>
+	  <BoardID>20220001</BoardID>
+	  <AxisIndex>2</AxisIndex>
+    <IsBelt>false</IsBelt>
+	</AxisInfo>
+	<AxisInfo>
+	  <Name>Z</Name>
+	  <BoardID>20220001</BoardID>
+	  <AxisIndex>3</AxisIndex>
+    <IsBelt>false</IsBelt>
+	</AxisInfo>
+</ArrayOfAxisInfo>

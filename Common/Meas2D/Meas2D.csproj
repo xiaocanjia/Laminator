@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{846348D6-DD7F-4D82-9DFB-C60FE1E3081F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Meas2D</RootNamespace>
+    <AssemblyName>Meas2D</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BSLib, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Packages\JLib\BSLib.dll</HintPath>
+    </Reference>
+    <Reference Include="halcondotnet">
+      <HintPath>..\..\Packages\Halcon\halcondotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="JLogging, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Packages\JLib\JLogging.dll</HintPath>
+    </Reference>
+    <Reference Include="SunnyUI">
+      <HintPath>..\..\Packages\UI\SunnyUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FixPosControl\FixPos2DManager.cs" />
+    <Compile Include="FixPosControl\FixPosModel\CircleLineFixPos2DModel.cs" />
+    <Compile Include="FixPosControl\FixPosModel\CirclesFixPos2DModel.cs" />
+    <Compile Include="FixPosControl\FixPosModel\EFixPos2DType.cs" />
+    <Compile Include="FixPosControl\FixPosModel\FixPosBase2DModel.cs" />
+    <Compile Include="FixPosControl\FixPosModel\FixPos2DFactory.cs" />
+    <Compile Include="FixPosControl\FixPosModel\LinesFixPos2DModel.cs" />
+    <Compile Include="FixPosControl\FixPosModel\ModelMatchFixPos2DModel.cs" />
+    <Compile Include="FixPosControl\FixPos2DPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FixPosControl\FixPos2DPanel.Designer.cs">
+      <DependentUpon>FixPos2DPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FixPosControl\FixPosView\CircleLineFixPos2DView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FixPosControl\FixPosView\CircleLineFixPos2DView.Designer.cs">
+      <DependentUpon>CircleLineFixPos2DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FixPosControl\FixPosView\CirclesFixPos2DView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FixPosControl\FixPosView\CirclesFixPos2DView.Designer.cs">
+      <DependentUpon>CirclesFixPos2DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FixPosControl\FixPosView\LinesFixPos2DView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FixPosControl\FixPosView\LinesFixPos2DView.Designer.cs">
+      <DependentUpon>LinesFixPos2DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FixPosControl\FixPosView\ModelMatchFixPos2DView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FixPosControl\FixPosView\ModelMatchFixPos2DView.Designer.cs">
+      <DependentUpon>ModelMatchFixPos2DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Meas2DManager.cs" />
+    <Compile Include="Meas2DPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Meas2DPage.Designer.cs">
+      <DependentUpon>Meas2DPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolControl\ETool2DType.cs" />
+    <Compile Include="ToolControl\Tools2DManager.cs" />
+    <Compile Include="ToolControl\ToolsModel\ReadCodeToolModel.cs" />
+    <Compile Include="ToolControl\ToolsModel\Tool2DBaseModel.cs" />
+    <Compile Include="ToolControl\ToolsModel\ToolsFactory.cs" />
+    <Compile Include="ToolControl\ToolsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolControl\ToolsPanel.Designer.cs">
+      <DependentUpon>ToolsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\MinimizedView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\MinimizedView.Designer.cs">
+      <DependentUpon>MinimizedView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\ReadCodeToolView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolControl\ToolsView\ReadCodeToolView.Designer.cs">
+      <DependentUpon>ReadCodeToolView.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FixPosControl\FixPos2DPanel.resx">
+      <DependentUpon>FixPos2DPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FixPosControl\FixPosView\CircleLineFixPos2DView.resx">
+      <DependentUpon>CircleLineFixPos2DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FixPosControl\FixPosView\CirclesFixPos2DView.resx">
+      <DependentUpon>CirclesFixPos2DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FixPosControl\FixPosView\LinesFixPos2DView.resx">
+      <DependentUpon>LinesFixPos2DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FixPosControl\FixPosView\ModelMatchFixPos2DView.resx">
+      <DependentUpon>ModelMatchFixPos2DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Meas2DPage.resx">
+      <DependentUpon>Meas2DPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolControl\ToolsPanel.resx">
+      <DependentUpon>ToolsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolControl\ToolsView\MinimizedView.resx">
+      <DependentUpon>MinimizedView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolControl\ToolsView\ReadCodeToolView.resx">
+      <DependentUpon>ReadCodeToolView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AlgoLib\AlgoLib.csproj">
+      <Project>{9188cd1c-87a1-4858-8282-843dfb9b1b33}</Project>
+      <Name>AlgoLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MeasResult\MeasResult.csproj">
+      <Project>{7f332724-6b38-4528-9f4f-5d43afd3829d}</Project>
+      <Name>MeasResult</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vision2D\Vision2D.csproj">
+      <Project>{edf88c71-e677-42d4-b77b-e3b5bb6ebc9c}</Project>
+      <Name>Vision2D</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

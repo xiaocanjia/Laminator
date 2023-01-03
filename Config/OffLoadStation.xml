@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ArrayOfAxisInfo>
+  <AxisInfo>
+    <Name>皮带线4</Name>
+    <BoardID>20220002</BoardID>
+    <AxisIndex>6</AxisIndex>
+    <IsBelt>true</IsBelt>
+  </AxisInfo>
+</ArrayOfAxisInfo>

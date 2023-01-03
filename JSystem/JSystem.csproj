@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{85BE006E-57F7-4B87-ACFD-55CB3921CBA4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>JSystem</RootNamespace>
+    <AssemblyName>JSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BSLib, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Packages\JLib\BSLib.dll</HintPath>
+    </Reference>
+    <Reference Include="DataLogging">
+      <HintPath>..\Packages\JLib\DataLogging.dll</HintPath>
+    </Reference>
+    <Reference Include="FileHelper">
+      <HintPath>..\Packages\JLib\FileHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="halcondotnet, Version=17.12.0.0, Culture=neutral, PublicKeyToken=4973bed59ddbf2b8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Packages\Halcon\halcondotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="JLogging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="Serilizer">
+      <HintPath>..\Packages\JLib\Serilizer.dll</HintPath>
+    </Reference>
+    <Reference Include="SunnyUI">
+      <HintPath>..\Packages\UI\SunnyUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Device\Cam2D\Camera2D.cs" />
+    <Compile Include="Device\Cam2D\Cam2DView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Device\Cam2D\Cam2DView.Designer.cs">
+      <DependentUpon>Cam2DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Device\Cam3D\Camera3D.cs" />
+    <Compile Include="Device\Cam3D\Cam3DView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Device\Cam3D\Cam3DView.Designer.cs">
+      <DependentUpon>Cam3DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Device\DeviceManager.cs" />
+    <Compile Include="Device\DeviceBase.cs" />
+    <Compile Include="Device\ScannigGun\ScanningGun.cs" />
+    <Compile Include="Device\ScannigGun\ScanningGunView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Device\ScannigGun\ScanningGunView.Designer.cs">
+      <DependentUpon>ScanningGunView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JEnum\EDeviceState.cs" />
+    <Compile Include="Device\DevicePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Device\DevicePage.Designer.cs">
+      <DependentUpon>DevicePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IO\DIView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IO\DIView.Designer.cs">
+      <DependentUpon>DIView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IO\DOView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IO\DOView.Designer.cs">
+      <DependentUpon>DOView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IO\IOManager.cs" />
+    <Compile Include="IO\IOPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IO\IOPage.Designer.cs">
+      <DependentUpon>IOPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JEnum\ECommType.cs" />
+    <Compile Include="JEnum\EDirection.cs" />
+    <Compile Include="JEnum\EDistType.cs" />
+    <Compile Include="JEnum\EMes3DStation.cs" />
+    <Compile Include="JEnum\EParamUnit.cs" />
+    <Compile Include="JEnum\EPointsType.cs" />
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Param\BasicParam.cs" />
+    <Compile Include="Param\ParamManager.cs" />
+    <Compile Include="Param\ParamPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Param\ParamPage.Designer.cs">
+      <DependentUpon>ParamPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Perform\PerformManager.cs" />
+    <Compile Include="Perform\PerformPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Perform\PerformPage.Designer.cs">
+      <DependentUpon>PerformPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Perform\Log\LogManager.cs" />
+    <Compile Include="Perform\Log\LogPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Perform\Log\LogPanel.Designer.cs">
+      <DependentUpon>LogPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Perform\Statistics\StatisticsManager.cs" />
+    <Compile Include="Perform\Statistics\StatisticsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Perform\Statistics\StatisticsPanel.Designer.cs">
+      <DependentUpon>StatisticsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Device\DevStatusPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Device\DevStatusPanel.Designer.cs">
+      <DependentUpon>DevStatusPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Perform\Status\StatusPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Perform\Status\StatusPanel.Designer.cs">
+      <DependentUpon>StatusPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Project\Projects.cs" />
+    <Compile Include="Station\AxisInfo.cs" />
+    <Compile Include="Station\AxisPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Station\AxisPanel.Designer.cs">
+      <DependentUpon>AxisPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Station\AxisParamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Station\AxisParamForm.Designer.cs">
+      <DependentUpon>AxisParamForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Station\ReadCodeStation\ReadCodeStation.cs" />
+    <Compile Include="Station\ReadCodeStation\ReadCodeStationFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Station\ReadCodeStation\ReadCodeStationFrom.Designer.cs">
+      <DependentUpon>ReadCodeStationFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Station\StationBase.cs" />
+    <Compile Include="Station\PointInfo.cs" />
+    <Compile Include="Station\StationManager.cs" />
+    <Compile Include="Station\StationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Station\StationView.Designer.cs">
+      <DependentUpon>StationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Station\StationsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Station\StationsPage.Designer.cs">
+      <DependentUpon>StationsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Station\VisionStation\VisionStation.cs" />
+    <Compile Include="Project\SysManagers.cs" />
+    <Compile Include="Project\ProjectManager.cs" />
+    <Compile Include="Project\ProjectPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Project\ProjectPanel.Designer.cs">
+      <DependentUpon>ProjectPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Station\VisionStation\VisionStationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Station\VisionStation\VisionStationForm.Designer.cs">
+      <DependentUpon>VisionStationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SysController.cs" />
+    <Compile Include="User\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\LoginManager.cs" />
+    <Compile Include="User\ModifyPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\ModifyPasswordForm.Designer.cs">
+      <DependentUpon>ModifyPasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForm.Designer.cs">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Device\Cam2D\Cam2DView.resx">
+      <DependentUpon>Cam2DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Device\Cam3D\Cam3DView.resx">
+      <DependentUpon>Cam3DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Device\DevicePage.resx">
+      <DependentUpon>DevicePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Device\ScannigGun\ScanningGunView.resx">
+      <DependentUpon>ScanningGunView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IO\DIView.resx">
+      <DependentUpon>DIView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IO\DOView.resx">
+      <DependentUpon>DOView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IO\IOPage.resx">
+      <DependentUpon>IOPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Param\ParamPage.resx">
+      <DependentUpon>ParamPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Perform\PerformPage.resx">
+      <DependentUpon>PerformPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Perform\Log\LogPanel.resx">
+      <DependentUpon>LogPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Perform\Statistics\StatisticsPanel.resx">
+      <DependentUpon>StatisticsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Device\DevStatusPanel.resx">
+      <DependentUpon>DevStatusPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Perform\Status\StatusPanel.resx">
+      <DependentUpon>StatusPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Station\AxisPanel.resx">
+      <DependentUpon>AxisPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Station\AxisParamForm.resx">
+      <DependentUpon>AxisParamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Station\ReadCodeStation\ReadCodeStationFrom.resx">
+      <DependentUpon>ReadCodeStationFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Station\StationView.resx">
+      <DependentUpon>StationView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Station\StationsPage.resx">
+      <DependentUpon>StationsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\ProjectPanel.resx">
+      <DependentUpon>ProjectPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Station\VisionStation\VisionStationForm.resx">
+      <DependentUpon>VisionStationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\ModifyPasswordForm.resx">
+      <DependentUpon>ModifyPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitForm.resx">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Meas2D\Meas2D.csproj">
+      <Project>{846348d6-dd7f-4d82-9dfb-c60fe1e3081f}</Project>
+      <Name>Meas2D</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Meas3D\Meas3D.csproj">
+      <Project>{1d1b8186-eb1c-4e92-9c2e-f8f8bcb85acc}</Project>
+      <Name>Meas3D</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\MeasResult\MeasResult.csproj">
+      <Project>{7f332724-6b38-4528-9f4f-5d43afd3829d}</Project>
+      <Name>MeasResult</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Vision2D\Vision2D.csproj">
+      <Project>{edf88c71-e677-42d4-b77b-e3b5bb6ebc9c}</Project>
+      <Name>Vision2D</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Vision3D\Vision3D.csproj">
+      <Project>{e09a050c-3e5e-4e30-a250-c9cedabb5f60}</Project>
+      <Name>Vision3D</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SDK\Camera2DSDK\Camera2DSDK.csproj">
+      <Project>{b2a423ba-57ff-4d15-9483-fa1047618a04}</Project>
+      <Name>Camera2DSDK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SDK\Camera3DSDK\Camera3DSDK.csproj">
+      <Project>{ee58ebca-06ac-44d0-b0ac-c9808490894c}</Project>
+      <Name>Camera3DSDK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SubSystem\BoardSys\BoardSys.csproj">
+      <Project>{42200b29-9b8c-45d8-a895-32e26388576d}</Project>
+      <Name>BoardSys</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>echo Copy libraries to $(SolutionDir)bin\Debug...
+xcopy /y $(SolutionDir)Packages\Halcon\* $(SolutionDir)bin\Debug
+xcopy /y $(SolutionDir)Packages\UI\* $(SolutionDir)bin\Debug
+xcopy /y $(SolutionDir)Packages\Password\* $(SolutionDir)bin\Debug
+xcopy /y $(MSBuildProjectDirectory)\Logo.ico $(SolutionDir)bin\Debug</PreBuildEvent>
+  </PropertyGroup>
+</Project>
